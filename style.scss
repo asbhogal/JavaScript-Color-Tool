@@ -5,17 +5,30 @@
         'partials/variables';
 
 .container {
+    position: absolute;
+    top: 25%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: 600px;
-    border: 2px solid #7928CA;
+    width: 25em;
+    padding: 3em 1em;
+    border: 0.2em solid #7928CA;
     border-radius: 5%;
+    label, input {
+        padding: 0.5em 0;
+    }
+    table {
+        padding-top: 1.5em;
+    }
     .box {
         height: 100px;
-        width: 50%;
+        width: 100%;
         background: red;
+        border-radius: 50%;
+    }
+    #spacer {
+        width: 1.5em;
     }
 }
 
