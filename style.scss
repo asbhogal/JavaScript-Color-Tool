@@ -3,3 +3,22 @@
         'partials/responsive',
         'partials/typography',
         'partials/variables';
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    border: 2px solid #7928CA;
+    border-radius: 5%;
+    .box {
+        height: 100px;
+        width: 50%;
+        background: red;
+    }
+}
+
+td {
+    width: 100px;
+}
