@@ -1,1 +1,11 @@
-/*# sourceMappingURL=style.css.map */
+/****** RALEWAY - 300 LIGHT ******/
+@font-face {
+  font-family: "Raleway";
+  font-style: light;
+  font-weight: 300;
+  src: url("/src/fonts/Raleway-Light.woff") format("woff"), url("/src/fonts/Raleway-Light.woff2") format("woff2");
+  font-display: swap;
+}
+* {
+  font-family: "Raleway", sans-serif;
+}/*# sourceMappingURL=style.css.map */

@@ -5,18 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Color Changer</title>
-    <link rel="stylesheet" href="/dist/style.css">
-    <script src="/script.js" defer></script>
+    <link rel="stylesheet" href="dist/style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
         <h1 class="title">Color Changer</h1>
     </div>
     <label for="hex">Color (HEX)</label>
-    <input type="text" name="hex" id="hex-input" placeholder="#000000">
-    <label for="slider" id="slider-text">0%</label>
 
-    <input type="" name="" id="input-color">
-    <input type="text" name="color" id="altered-color">
+    <input  type="text" 
+            name="hex"
+            id="hex-input"
+            placeholder="#000000">
+    
+    <label  for="slider" 
+            id="slider-text">0%</label>
+
+    <input  type="range" 
+            min="0" 
+            max="100" 
+            value="0"
+            name="slider"
+            id="input-color">
+
+    <p>Selected Color</p>
+    <div    id="input-color"
+            class="box">
+    </div>
+
+    <p>Final Color</p>
+    <div    id="final-color"
+            class="box">
+    </div>
+
 </body>
 </html>
