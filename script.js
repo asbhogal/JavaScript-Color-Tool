@@ -9,6 +9,8 @@ const isValidHex = (hex) => {                                           // DECLA
     if(!hex) return false;                                              // IF THE VALUE IS NOT A HEX (ie. TWO CHARACTERS, MORE THAN 6 etc,), RETURN false
 
     const strippedHex = hex.replace('#', '');                           // A SIMPLE WAY OF STRIPPING THE # FROM THE INPUT BY DECLARING THE VARIABLE strippedHex, SEARCHING FOR THE '#' AND SUBSEQUENTLY REPLACING IT WITH ''
+    RegExp = /^[0-9a-fA-F]+$/;
+    if (RegExp.test(hex)) return true;
     return strippedHex.length === 3 || strippedHex.length === 6;        // RETURNS THE LENGTH OF THE strippedHex IF IT IS EITHER 3 OR 6
 }
 
@@ -22,4 +24,4 @@ console.log(isValidHex("#fff"));                                        // SHOUL
 console.log(isValidHex("#azp"));                                        // SHOULD RETURN false
 console.log(isValidHex("#323"));                                        // SHOULD RETURN true
 
-// N.B. THE ALPHABETICAL RANGE OF HEX VALUES ONLY RUN FROM a --> F
+// N.B. THE ALPHABETICAL RANGE OF HEX VALUES ONLY RUN FROM a -- f
