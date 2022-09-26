@@ -6,16 +6,20 @@
     // THE CHECKS ARE THEREFORE CONSIDERING 'ARE THE HEX VALUES ENTERED VALID TO BEGIN WITH?'
 
 const isValidHex = (hex) => {                                           // DECLARES THE FUNCTION isValidHex WHICH ACCEPTS HEX VALUES, THEN RETURNS A RESULT DEPENDING ON THE INPUT
+    
+    RegExp = /^[0-9a-fA-F]+$/;
+
+    if (RegExp.hex) return true;
+
     if(!hex) return false;                                              // IF THE VALUE IS NOT A HEX (ie. TWO CHARACTERS, MORE THAN 6 etc,), RETURN false
 
     const strippedHex = hex.replace('#', '');                           // A SIMPLE WAY OF STRIPPING THE # FROM THE INPUT BY DECLARING THE VARIABLE strippedHex, SEARCHING FOR THE '#' AND SUBSEQUENTLY REPLACING IT WITH ''
     
-    RegExp = /^[0-9a-fA-F]+$/;
-    if (RegExp.hex) return true;
-    
     return strippedHex.length === 3 || strippedHex.length === 6;        // RETURNS THE LENGTH OF THE strippedHex IF IT IS EITHER 3 OR 6
 
 }
+
+// THE CHECK SHOULD CHECK BE 'IF HEX IS 3 OR 6 AND FULFILS REGEX CHECK, RETURN TRUE <-- TO BE DONE
 
 // CALLING THE FUNCTION BY PASSING IT A VALUE AND RETURNING THE RESULT TO THE CONSOLE LOG
 // THIS IS GOOD PRACTICE TO TEST OUT THE LOGIC OF THE FUNCTION TO ENSURE THINGS ARE RUNNING AS THEY SHOULD BEFORE ANY ADDITIONAL CODING IS PARSED TO THE INPUTS
