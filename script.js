@@ -7,16 +7,15 @@
 
 const isValidHex = (hex) => {                                           // DECLARES THE FUNCTION isValidHex WHICH ACCEPTS HEX VALUES, THEN RETURNS A RESULT DEPENDING ON THE INPUT
     
-    RegExp = /^[0-9a-fA-F]+$/;
-
-    if (RegExp.hex) return true;
-
-    if(!hex) return false;                                              // IF THE VALUE IS NOT A HEX (ie. TWO CHARACTERS, MORE THAN 6 etc,), RETURN false
+    const regexCheck = /^[0-9a-fA-F]+$/;
 
     const strippedHex = hex.replace('#', '');                           // A SIMPLE WAY OF STRIPPING THE # FROM THE INPUT BY DECLARING THE VARIABLE strippedHex, SEARCHING FOR THE '#' AND SUBSEQUENTLY REPLACING IT WITH ''
-    
-    return strippedHex.length === 3 || strippedHex.length === 6;        // RETURNS THE LENGTH OF THE strippedHex IF IT IS EITHER 3 OR 6
 
+    if ((strippedHex.length === 3 || strippedHex.length === 6) && (regexCheck.test(strippedHex))) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 // THE CHECK SHOULD CHECK BE 'IF HEX IS PRESENT AND IS BETWEEN 3 OR 6 AND FULFILS REGEX CHECK, RETURN true <-- TO BE DONE
