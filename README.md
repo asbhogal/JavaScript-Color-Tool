@@ -1,6 +1,6 @@
 <h1>Color Changer</h1>
 <div align="center">
-
+<br>
 ![](https://api.checklyhq.com/v1/badges/checks/942fd695-df82-433d-909b-3c3efe4ce36b?style=for-the-badge&theme=dark) ![](https://api.checklyhq.com/v1/badges/checks/942fd695-df82-433d-909b-3c3efe4ce36b?style=for-the-badge&theme=dark&responseTime=true) <br><br> ![GitHub deployments](https://img.shields.io/github/deployments/asbhogal/JavaScript-Color-Tool/production?label=DEPLOYMENT%20STATE&style=for-the-badge&labelColor=000) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/asbhogal/JavaScript-Color-Tool?style=for-the-badge&labelColor=000) ![GitHub repo size](https://img.shields.io/github/repo-size/asbhogal/JavaScript-Color-Tool?color=blueviolet&style=for-the-badge&labelColor=000)
 
 </div>
