@@ -1,6 +1,6 @@
 <h1>Color Changer</h1>
 
-![](https://api.checklyhq.com/v1/badges/checks/942fd695-df82-433d-909b-3c3efe4ce36b?style=for-the-badge&theme=dark) ![](https://api.checklyhq.com/v1/badges/checks/942fd695-df82-433d-909b-3c3efe4ce36b?style=for-the-badge&theme=dark&responseTime=true)
+![](https://api.checklyhq.com/v1/badges/checks/942fd695-df82-433d-909b-3c3efe4ce36b?style=for-the-badge&theme=dark) ![](https://api.checklyhq.com/v1/badges/checks/942fd695-df82-433d-909b-3c3efe4ce36b?style=for-the-badge&theme=dark&responseTime=true) ![GitHub deployments](https://img.shields.io/github/deployments/asbhogal/JavaScript-Color-Tool/production?label=DEPLOYMENT%20STATE&style=for-the-badge)
 
 An interactive tool which allows a user to select a color based on a hex value, then modify it live (by adjusting its brightness.) The resulting color is displayed next to it. This is a project part of the Scrimba course and is currently under development.
 
