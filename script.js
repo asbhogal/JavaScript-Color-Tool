@@ -5,6 +5,21 @@
         // N.B. 123 --> 112233
     // THE CHECKS ARE THEREFORE CONSIDERING 'ARE THE HEX VALUES ENTERED VALID TO BEGIN WITH?'
 
+const hexInput = document.getElementById("hex-input");
+const inputColor = document.getElementById("selected-color");
+
+hexInput.addEventListener('keyup', () => {
+
+    const hex = hexInput.value;
+    
+    if ((!isValidHex(hex))) return;
+
+    const strippedHex = hex.replace('#', '');
+
+    inputColor.style.backgroundColor = "#" + strippedHex;
+
+});
+
 const isValidHex = (hex) => {                                           // DECLARES THE FUNCTION isValidHex WHICH ACCEPTS HEX VALUES, THEN RETURNS A RESULT DEPENDING ON THE INPUT
     
     const regexCheck = /^[0-9a-fA-F]+$/;
@@ -16,7 +31,7 @@ const isValidHex = (hex) => {                                           // DECLA
     } else {
         return false;
     }
-}
+};
 
 /*  THE FUNCTION CREATES A VARIABLE (SAME NAME) AND IS PASSED THE INPUT IN THE hex PARAMETER. INSIDE THE FUNCTION,
     A VARIABLE IS CREATED WHICH STORES A REGEX CHECK. ANOTHER VARIABLE IS CREATED WHICH TAKES THE hex CONTENTS AND
