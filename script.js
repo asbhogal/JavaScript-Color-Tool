@@ -32,7 +32,30 @@ const isValidHex = (hex) => {                                           // DECLA
     }
 };
 
-/* CONSOLE OUTPUT TESTS*/
+/* CONVERT HEX TO GRB FUNCTION */
+
+const convertHexToRGB = (hex) => {
+
+    if ((!isValidHex(hex))) return null;
+
+    let strippedHex = hex.replace('#', '');                             // THE hex VALUE PASSED IS CONVERTED AND PASSED TO strippedHex, WHICH THEN BECOMES THE VARIABLE USED (NOT THE RAW DATA INPUTTED ie. hex ITSELF)
+
+    if (strippedHex.length === 3) {                                     // THIS CONDITION DOUBLES UP EACH INDIVIDUAL VALUE TO A PAIR (e.g. 123 --> 112233) WHICH IS HOW HEX VALUES CONVENTIONALLY WORK
+        strippedHex = strippedHex[0] + strippedHex[0]                   // TAKE THE FIRST VALUE IN THE STRING AND CONCATENATE IT WITH THE SAME VALUE
+                    + strippedHex[1] + strippedHex[1]                   // TAKE THE SECOND VALUE IN THE STRING AND CONCATENATE IT WITH THE SAME VALUE
+                    + strippedHex[2] + strippedHex[2];                  // TAKE THE THIRD VALUE IN THE STRING AND CONCATENATE IT WITH THE SAME VALUE
+    }
+
+    console.log(strippedHex);                                           // SHOULD RETURN 112233 (CANNOT BE PLACED ON BELOW SECTION AS VARIABLE IS LOCAL SCOPE)
+
+    const r = parseInt(strippedHex.slice(0, 2), 16);                    // EXTRACT THE FIRST TWO VALUES OF THE STRING, MULTIPLY THIS BY 16 USING parseInt, THEN ASSIGN THIS VALUE TO r
+    const g = parseInt(strippedHex.slice(2, 4), 16);                    // EXTRACT THE NEXT TWO VALUES OF THE STRING, MULTIPLY THIS BY 16 USING parseInt, THEN ASSIGN THIS VALUE TO g
+    const b = parseInt(strippedHex.slice(4, 6), 16);                    // EXTRACT THE FINAL TWO VALUES OF THE STRING, MULTIPLY THIS BY 16 USING parseInt, THEN ASSIGN THIS VALUE TO b
+
+    return {r,g,b};                                                     // RETURN THE CONVERTED VALUE. OFTEN, {r:r, g:g, b:b} IS USED HOWEVER ISN'T REQUIRED HERE, AS THE VARIABLE NAMES ALREADY CORRESPOND ACCORDINGLY
+}
+
+/* FUNCTION CALLS & CONSOLE OUTPUT TESTS*/
 
 console.log(isValidHex("#000000"));                                     // SHOULD RETURN true
 console.log(isValidHex("#0000000"));                                    // SHOULD RETURN false
@@ -40,6 +63,8 @@ console.log(isValidHex("#ffffff"));                                     // SHOUL
 console.log(isValidHex("#fff"));                                        // SHOULD RETURN true
 console.log(isValidHex("#azp"));                                        // SHOULD RETURN false
 console.log(isValidHex("#323"));                                        // SHOULD RETURN true
+console.log(convertHexToRGB("123"));                                    // SHOULD RETURN {r: 17, g: 34, b: 51}
+console.log(convertHexToRGB("000000"));                                 // SHOULD RETURN {r: 0, g: 0, b: 0}
 
 /* NOTES */
 
@@ -50,6 +75,9 @@ console.log(isValidHex("#323"));                                        // SHOUL
     // FOR THIS TO THEN BE PARSED THROUGH CHECKS, THE # SHOULD BE OMITTED TO 'STANDARDISE' THE INPUT TYPE.
     // THE LENGTH OF THE CHARACTER SHOULD ALSO BE CHECKED. THE DEFAULT IS 6, HOWEVER 3 CHARACTERS SHOULD ALSO BE ACCEPTED
         // N.B. 123 --> 112233
+        // 0   1  2
+        // 00 11 22 --> THIS MEANS THE END VALUE MUST BE 6 CHARACTERS LONG
+        // AN rgb IS A BASE 16 OF EACH INDIVIDUAL HEX VALUE
     // THE CHECKS ARE THEREFORE CONSIDERING 'ARE THE HEX VALUES ENTERED VALID TO BEGIN WITH?'
 
     /*  THE FUNCTION isValidHex CREATES A VARIABLE (SAME NAME) AND IS PASSED THE INPUT IN THE hex PARAMETER. INSIDE THE FUNCTION,
@@ -61,3 +89,5 @@ console.log(isValidHex("#323"));                                        // SHOUL
 // THE CHECK SHOULD CHECK BE 'IF HEX IS PRESENT AND IS BETWEEN 3 OR 6 AND FULFILS REGEX CHECK, RETURN true <-- TO BE DONE
 // CALLING THE FUNCTION BY PASSING IT A VALUE AND RETURNING THE RESULT TO THE CONSOLE LOG
 // THIS IS GOOD PRACTICE TO TEST OUT THE LOGIC OF THE FUNCTION TO ENSURE THINGS ARE RUNNING AS THEY SHOULD BEFORE ANY ADDITIONAL CODING IS PARSED TO THE INPUTS
+
+// FOR A FUNCTION TO RUN, IT MUST BE CALLED BY, IN THIS CASE, PASSING IT A VALUE (e.g. convertHexToRGB("123"))
