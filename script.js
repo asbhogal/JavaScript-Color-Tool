@@ -8,15 +8,15 @@
 const hexInput = document.getElementById("hex-input");                  // GET VALUES FROM INPUT VIA DOM ELEMENT AND ASSIGN THIS TO hexInput
 const inputColor = document.getElementById("selected-color");           // GET VALUES FOR THE SELECTED COLOR VIA DOM ELEMENT AND ASSIGN THIS TO inputColor
 
-hexInput.addEventListener('keyup', () => {
+hexInput.addEventListener('keyup', () => {                              // DETECTS IF THE USER IS TYPING IN THE INPUT BOX, THEN PARSES THE FOLLOWING
 
-    const hex = hexInput.value;
+    const hex = hexInput.value;                                         // ASSIGN THE VALUE OF THE hexInput TO VARIABLE hex
     
-    if ((!isValidHex(hex))) return;
+    if ((!isValidHex(hex))) return;                                     // if THE CONDITIONAL CHECK FAILS, return AND STOP PARSING
 
-    const strippedHex = hex.replace('#', '');                           // CHECKS AGAIN 
+    const strippedHex = hex.replace('#', '');                           // SEE LINE 27
 
-    inputColor.style.backgroundColor = "#" + strippedHex;
+    inputColor.style.backgroundColor = "#" + strippedHex;               // TAKES THE VALUE OF strippedHex, APPENDS # TO THE BEGINNING OF IT AND PASSES THIS VALUE TO THE BACKGROUND-COLOR PROPERTY
 
 });
 
