@@ -64,7 +64,7 @@ console.log(isValidHex("#fff"));                                        // SHOUL
 console.log(isValidHex("#azp"));                                        // SHOULD RETURN false
 console.log(isValidHex("#323"));                                        // SHOULD RETURN true
 console.log(convertHexToRGB("123"));                                    // SHOULD RETURN {r: 17, g: 34, b: 51}
-console.log(convertHexToRGB("000000"));                                 // SHOULD RETURN {r: 0, g: 0, b: 0}
+console.log(convertHexToRGB("ffe"));                                 // SHOULD RETURN {r: 0, g: 0, b: 0}
 
 /* NOTES */
 
@@ -91,3 +91,5 @@ console.log(convertHexToRGB("000000"));                                 // SHOUL
 // THIS IS GOOD PRACTICE TO TEST OUT THE LOGIC OF THE FUNCTION TO ENSURE THINGS ARE RUNNING AS THEY SHOULD BEFORE ANY ADDITIONAL CODING IS PARSED TO THE INPUTS
 
 // FOR A FUNCTION TO RUN, IT MUST BE CALLED BY, IN THIS CASE, PASSING IT A VALUE (e.g. convertHexToRGB("123"))
+
+// CONVERTING hex VALUES TO rgb WILL ALLOW ALTERATIONS TO THEN BE MADE TO THEM (e.g. USER CHANGING LIGHT/DARK)
