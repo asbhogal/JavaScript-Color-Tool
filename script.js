@@ -12,11 +12,11 @@ hexInput.addEventListener('keyup', () => {                              // DETEC
 
     const hex = hexInput.value;                                         // ASSIGN THE VALUE OF THE hexInput TO VARIABLE hex
     
-    if ((!isValidHex(hex))) return;                                     // if THE CONDITIONAL CHECK FAILS, return AND STOP PARSING
+    if ((!isValidHex(hex))) return;                                     // CHECKS IF THE INPUT IS VALID BY EXECUTING THE isValidHex FUNCTION. IF THE CONDITIONAL CHECK HERE FAILS, return AND STOP PARSING. THIS IS CRUCIAL, BEFORE THE FOLLOWING CAN BE PARSED.
 
     const strippedHex = hex.replace('#', '');                           // SEE LINE 27
 
-    inputColor.style.backgroundColor = "#" + strippedHex;               // TAKES THE VALUE OF strippedHex, APPENDS # TO THE BEGINNING OF IT AND PASSES THIS VALUE TO THE BACKGROUND-COLOR PROPERTY
+    inputColor.style.backgroundColor = "#" + strippedHex;               // TAKES THE VALUE OF strippedHex, APPENDS # TO THE BEGINNING OF IT AND ASSIGNS THIS VALUE TO THE BACKGROUND-COLOR PROPERTY
 
 });
 
