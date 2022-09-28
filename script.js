@@ -5,8 +5,8 @@
         // N.B. 123 --> 112233
     // THE CHECKS ARE THEREFORE CONSIDERING 'ARE THE HEX VALUES ENTERED VALID TO BEGIN WITH?'
 
-const hexInput = document.getElementById("hex-input");
-const inputColor = document.getElementById("selected-color");
+const hexInput = document.getElementById("hex-input");                  // GET VALUES FROM INPUT VIA DOM ELEMENT AND ASSIGN THIS TO hexInput
+const inputColor = document.getElementById("selected-color");           // GET VALUES FOR THE SELECTED COLOR VIA DOM ELEMENT AND ASSIGN THIS TO inputColor
 
 hexInput.addEventListener('keyup', () => {
 
@@ -50,4 +50,4 @@ console.log(isValidHex("#fff"));                                        // SHOUL
 console.log(isValidHex("#azp"));                                        // SHOULD RETURN false
 console.log(isValidHex("#323"));                                        // SHOULD RETURN true
 
-// N.B. THE ALPHABETICAL RANGE OF HEX VALUES ONLY RUN FROM a -- f
+// N.B. THE ALPHABETICAL RANGE OF HEX VALUES ONLY RUN FROM a --> f
