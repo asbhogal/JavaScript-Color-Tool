@@ -55,6 +55,8 @@ const convertHexToRGB = (hex) => {
     return {r,g,b};                                                     // RETURN THE CONVERTED VALUE. OFTEN, {r:r, g:g, b:b} IS USED HOWEVER ISN'T REQUIRED HERE, AS THE VARIABLE NAMES ALREADY CORRESPOND ACCORDINGLY
 }
 
+/* CONVERT GRB BACK TO HEX FUNCTION */
+
 /* FUNCTION CALLS & CONSOLE OUTPUT TESTS*/
 
 console.log(isValidHex("#000000"));                                     // SHOULD RETURN true
