@@ -21,6 +21,9 @@
     }
     table {
         padding-top: 1.5em;
+        tr > td {
+            width: 100px;
+        }
     }
     .box {
         height: 75px;
@@ -34,6 +37,3 @@
     }
 }
 
-td {
-    width: 100px;
-}

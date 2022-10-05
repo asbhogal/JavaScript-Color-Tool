@@ -42,6 +42,9 @@ body {
 .container table {
   padding-top: 1.5em;
 }
+.container table tr > td {
+  width: 100px;
+}
 .container .box {
   height: 75px;
   width: 75px;
@@ -51,8 +54,4 @@ body {
 }
 .container #spacer {
   width: 1.5em;
-}
-
-td {
-  width: 100px;
 }/*# sourceMappingURL=style.css.map */
