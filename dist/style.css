@@ -13,6 +13,11 @@ body {
   background: #000000;
 }
 
+@media only screen and (max-width: 393px) {
+  .container {
+    width: auto;
+  }
+}
 /****** RALEWAY - 300 LIGHT ******/
 @font-face {
   font-family: "Raleway";
