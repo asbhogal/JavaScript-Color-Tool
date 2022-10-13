@@ -58,13 +58,28 @@ const convertHexToRGB = (hex) => {
 /* CONVERT RGB BACK TO HEX FUNCTION */
 
 const convertRGBToHex = (r,g,b) => {
-    let convertedRed = r.toString(16);
-    let convertedGreen = g.toString(16);
-    let convertedBlue = b.toString(16);
+    let convertedRed = r.toString(16);                                  // TAKES THE VALUE OF r AND PARSES toString WITH A BASE OF 16 TO RETURN ITS HEX PAIR
+    let convertedGreen = g.toString(16);                                // TAKES THE VALUE OF b AND PARSES toString WITH A BASE OF 16 TO RETURN ITS HEX PAIR
+    let convertedBlue = b.toString(16);                                 // TAKES THE VALUE OF b AND PARSES toString WITH A BASE OF 16 TO RETURN ITS HEX PAIR
+    
+    if (convertedRed!= 2) {
+        convertedRed = convertedRed + convertedRed;
+    }
+
+    if (convertedGreen!= 2) {
+        convertedGreen = convertedGreen + convertedGreen;
+    }
+
+    if (convertedBlue!= 2) {
+        convertedBlue = convertedBlue + convertedBlue;
+    }
+
+    console.log(convertedRed, convertedGreen, convertedBlue);
+    
     return "#" + convertedRed + convertedGreen + convertedBlue;
 }
 
-console.log(convertRGBToHex(225,225,225));
+console.log(convertRGBToHex(0,0,0));
 
 /* FUNCTION CALLS & CONSOLE OUTPUT TESTS*/
 
