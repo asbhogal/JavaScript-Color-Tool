@@ -37,9 +37,6 @@ body {
   border: 0.2em solid #7928CA;
   border-radius: 5%;
   color: #fff;
-  -webkit-box-shadow: 0px 0px 15px 5px rgb(121, 40, 202);
-  -moz-box-shadow: 0px 0px 15px 5px rgb(121, 40, 202);
-  box-shadow: 0px 0px 15px 5px rgb(121, 40, 202);
 }
 .container label, .container input {
   padding: 0.5em 0;
@@ -48,14 +45,14 @@ body {
   padding-top: 1.5em;
 }
 .container table tr > td {
-  width: 6.25rem;
+  width: 100px;
 }
 .container .box {
-  height: 4.6875rem;
-  width: 4.6875rem;
+  height: 75px;
+  width: 75px;
   background: rgba(115, 115, 115, 0.3215686275);
   border-radius: 50%;
-  margin: 0.3125rem auto;
+  margin: 5px auto;
 }
 .container #spacer {
   width: 1.5em;

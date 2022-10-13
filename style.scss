@@ -1,9 +1,8 @@
-@forward        'partials/globals';
-@forward        'partials/responsive';
-@forward        'partials/typography';
-@forward        'partials/variables';
-
-@import         'partials/mixins';
+@import 'partials/globals',
+        'partials/mixins',
+        'partials/responsive',
+        'partials/typography',
+        'partials/variables';
 
 .container {
     position: absolute;
@@ -17,22 +16,21 @@
     border: 0.2em solid #7928CA;
     border-radius: 5%;
     color: #fff;
-    @include cross-browser-support-box-shadow;
     label, input {
         padding: 0.5em 0;
     }
     table {
         padding-top: 1.5em;
         tr > td {
-            width: 6.25rem;
+            width: 100px;
         }
     }
     .box {
-        height: 4.6875rem;
-        width: 4.6875rem;
+        height: 75px;
+        width: 75px;
         background: #73737352;
         border-radius: 50%;
-        margin: .3125rem auto;
+        margin: 5px auto;
     }
     #spacer {
         width: 1.5em;
