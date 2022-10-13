@@ -66,7 +66,7 @@ const convertRGBToHex = (r,g,b) => {
     return convertedHex;
 }
 
-console.log(convertRGBToHex(0,0,255));
+console.log(convertRGBToHex(0,255,255));
 
 /* FUNCTION CALLS & CONSOLE OUTPUT TESTS*/
 

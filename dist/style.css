@@ -15,7 +15,7 @@ body {
 
 @media only screen and (max-width: 415px) {
   .container {
-    width: auto;
+    width: auto !important;
   }
 }
 /****** RALEWAY - 300 LIGHT ******/
