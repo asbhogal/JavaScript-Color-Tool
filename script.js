@@ -55,18 +55,27 @@ const convertHexToRGB = (hex) => {
     return {r,g,b};                                                     // RETURN THE CONVERTED VALUE. OFTEN, {r:r, g:g, b:b} IS USED HOWEVER ISN'T REQUIRED HERE, AS THE VARIABLE NAMES ALREADY CORRESPOND ACCORDINGLY
 }
 
-/* CONVERT GRB BACK TO HEX FUNCTION */
+/* CONVERT RGB BACK TO HEX FUNCTION */
+
+const convertRGBToHex = (r,g,b) => {
+    let convertedRed = r.toString(16);
+    let convertedGreen = g.toString(16);
+    let convertedBlue = b.toString(16);
+    return "#" + convertedRed + convertedGreen + convertedBlue;
+}
+
+console.log(convertRGBToHex(225,225,225));
 
 /* FUNCTION CALLS & CONSOLE OUTPUT TESTS*/
 
-console.log(isValidHex("#000000"));                                     // SHOULD RETURN true
+/*console.log(isValidHex("#000000"));                                     // SHOULD RETURN true
 console.log(isValidHex("#0000000"));                                    // SHOULD RETURN false
 console.log(isValidHex("#ffffff"));                                     // SHOULD RETURN true
 console.log(isValidHex("#fff"));                                        // SHOULD RETURN true
 console.log(isValidHex("#azp"));                                        // SHOULD RETURN false
 console.log(isValidHex("#323"));                                        // SHOULD RETURN true
 console.log(convertHexToRGB("123"));                                    // SHOULD RETURN {r: 17, g: 34, b: 51}
-console.log(convertHexToRGB("ffe"));                                 // SHOULD RETURN {r: 0, g: 0, b: 0}
+console.log(convertHexToRGB("ffe"));                                 // SHOULD RETURN {r: 0, g: 0, b: 0}*/
 
 /* NOTES */
 
