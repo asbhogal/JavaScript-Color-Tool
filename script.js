@@ -73,7 +73,7 @@ console.log(convertRGBToHex(0,255,255));
 /* DISPLAY PERCENTAGE IN TEXT FROM SLIDER DRAG */
 
 sliderBar.addEventListener('input', () => {
-    sliderText.innerHTML = sliderBar.value + " &#37;";
+    sliderText.innerHTML = `${sliderBar.value} &#37;`;
 })
 
 
