@@ -1,0 +1,7 @@
+@forward 'variables';
+
+@mixin cross-browser-support-box-shadow {
+    -webkit-box-shadow:     $box-shadow;
+    -moz-box-shadow:        $box-shadow;
+    box-shadow:             $box-shadow;
+}
