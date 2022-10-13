@@ -69,6 +69,9 @@ body {
   -moz-transition: all 0.3s ease-in;
   -o-transition: all 0.3s ease-in;
 }
+.container #hex-input[type=range]::-webkit-slider-thumb {
+  display: none;
+}
 .container table {
   padding-top: 1.5em;
 }

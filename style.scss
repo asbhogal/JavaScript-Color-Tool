@@ -32,6 +32,9 @@
             @include cross-browser-support-box-shadow;
             @include cross-browser-support-transition-set;
         }
+        &[type="range"]::-webkit-slider-thumb {
+            display:none;
+        }
     }
     table {
         padding-top: 1.5em;
@@ -50,4 +53,3 @@
         width: 1.5em;
     }
 }
-
