@@ -1,8 +1,9 @@
-@import 'partials/globals',
-        'partials/mixins',
-        'partials/responsive',
-        'partials/typography',
-        'partials/variables';
+@forward        'partials/globals';
+@forward        'partials/responsive';
+@forward        'partials/typography';
+@forward        'partials/variables';
+
+@import         'partials/mixins';
 
 .container {
     position: absolute;
