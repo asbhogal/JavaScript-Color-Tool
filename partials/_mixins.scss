@@ -5,3 +5,10 @@
     -moz-box-shadow:        $box-shadow;
     box-shadow:             $box-shadow;
 }
+
+@mixin cross-browser-support-transition-set {
+    transition:             $transition-03;
+    -webkit-transition:     $transition-03;
+    -moz-transition:        $transition-03;
+    -o-transition:          $transition-03;
+}

@@ -21,6 +21,18 @@
     label, input {
         padding: 0.5em 0;
     }
+    #hex-input {
+        border-radius: .625rem;
+        padding: .625rem 1.25rem;
+        font-size: 1rem;
+        outline: none;
+        @include cross-browser-support-transition-set;
+        &:focus {
+            border: .125rem solid #7928ca;
+            @include cross-browser-support-box-shadow;
+            @include cross-browser-support-transition-set;
+        }
+    }
     table {
         padding-top: 1.5em;
         tr > td {

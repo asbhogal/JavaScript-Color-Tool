@@ -37,12 +37,32 @@ body {
   border: 0.2em solid #7928CA;
   border-radius: 5%;
   color: #fff;
-  -webkit-box-shadow: 0px 0px 15px 5px rgb(121, 40, 202);
-  -moz-box-shadow: 0px 0px 15px 5px rgb(121, 40, 202);
-  box-shadow: 0px 0px 15px 5px rgb(121, 40, 202);
+  -webkit-box-shadow: 0px 0px 15px 5px #7928ca;
+  -moz-box-shadow: 0px 0px 15px 5px #7928ca;
+  box-shadow: 0px 0px 15px 5px #7928ca;
 }
 .container label, .container input {
   padding: 0.5em 0;
+}
+.container #hex-input {
+  border-radius: 0.625rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+}
+.container #hex-input:focus {
+  border: 0.125rem solid #7928ca;
+  -webkit-box-shadow: 0px 0px 15px 5px #7928ca;
+  -moz-box-shadow: 0px 0px 15px 5px #7928ca;
+  box-shadow: 0px 0px 15px 5px #7928ca;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
 }
 .container table {
   padding-top: 1.5em;
