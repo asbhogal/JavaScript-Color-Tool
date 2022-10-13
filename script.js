@@ -1,7 +1,7 @@
 /* ASSIGN CONST VARIABLES FROM DOM ELEMENTS*/
 
-const hexInput = document.getElementById("hex-input");                  // GET VALUES FROM INPUT VIA DOM ELEMENT AND ASSIGN THIS TO hexInput
-const inputColor = document.getElementById("selected-color");           // GET VALUES FOR THE SELECTED COLOR VIA DOM ELEMENT AND ASSIGN THIS TO inputColor
+const   hexInput = document.getElementById("hex-input"),                  // GET VALUES FROM INPUT VIA DOM ELEMENT AND ASSIGN THIS TO hexInput
+        inputColor = document.getElementById("selected-color");           // GET VALUES FOR THE SELECTED COLOR VIA DOM ELEMENT AND ASSIGN THIS TO inputColor
 
 /* USER INPUT CHECK */
 
@@ -21,9 +21,8 @@ hexInput.addEventListener('keyup', () => {                              // DETEC
 
 const isValidHex = (hex) => {                                           // DECLARES THE FUNCTION isValidHex WHICH ACCEPTS HEX VALUES, THEN RETURNS A RESULT DEPENDING ON THE INPUT
     
-    const regexCheck = /^[0-9a-fA-F]+$/;
-
-    const strippedHex = hex.replace('#', '');                           // A SIMPLE WAY OF STRIPPING THE # FROM THE INPUT BY DECLARING THE VARIABLE strippedHex, SEARCHING FOR THE '#' AND SUBSEQUENTLY REPLACING IT WITH ''
+    const   regexCheck = /^[0-9a-fA-F]+$/,
+            strippedHex = hex.replace('#', '');                           // A SIMPLE WAY OF STRIPPING THE # FROM THE INPUT BY DECLARING THE VARIABLE strippedHex, SEARCHING FOR THE '#' AND SUBSEQUENTLY REPLACING IT WITH ''
 
     if ((strippedHex.length === 3 || strippedHex.length === 6) && (regexCheck.test(strippedHex))) {
         return true;
@@ -48,9 +47,9 @@ const convertHexToRGB = (hex) => {
 
     console.log(strippedHex);                                           // SHOULD RETURN 112233 (CANNOT BE PLACED ON BELOW SECTION AS VARIABLE IS LOCAL SCOPE)
 
-    const r = parseInt(strippedHex.slice(0, 2), 16);                    // EXTRACT THE FIRST TWO VALUES OF THE STRING, MULTIPLY THIS BY 16 USING parseInt, THEN ASSIGN THIS VALUE TO r
-    const g = parseInt(strippedHex.slice(2, 4), 16);                    // EXTRACT THE NEXT TWO VALUES OF THE STRING, MULTIPLY THIS BY 16 USING parseInt, THEN ASSIGN THIS VALUE TO g
-    const b = parseInt(strippedHex.slice(4, 6), 16);                    // EXTRACT THE FINAL TWO VALUES OF THE STRING, MULTIPLY THIS BY 16 USING parseInt, THEN ASSIGN THIS VALUE TO b
+    const   r = parseInt(strippedHex.slice(0, 2), 16),                    // EXTRACT THE FIRST TWO VALUES OF THE STRING, MULTIPLY THIS BY 16 USING parseInt, THEN ASSIGN THIS VALUE TO r
+            g = parseInt(strippedHex.slice(2, 4), 16),                    // EXTRACT THE NEXT TWO VALUES OF THE STRING, MULTIPLY THIS BY 16 USING parseInt, THEN ASSIGN THIS VALUE TO g
+            b = parseInt(strippedHex.slice(4, 6), 16);                    // EXTRACT THE FINAL TWO VALUES OF THE STRING, MULTIPLY THIS BY 16 USING parseInt, THEN ASSIGN THIS VALUE TO b
 
     return {r,g,b};                                                     // RETURN THE CONVERTED VALUE. OFTEN, {r:r, g:g, b:b} IS USED HOWEVER ISN'T REQUIRED HERE, AS THE VARIABLE NAMES ALREADY CORRESPOND ACCORDINGLY
 }
@@ -58,9 +57,9 @@ const convertHexToRGB = (hex) => {
 /* CONVERT RGB BACK TO HEX FUNCTION */
 
 const convertRGBToHex = (r,g,b) => {
-    let convertedRed = r.toString(16);                                  // TAKES THE VALUE OF r AND PARSES toString WITH A BASE OF 16 TO RETURN ITS HEX PAIR
-    let convertedGreen = g.toString(16);                                // TAKES THE VALUE OF b AND PARSES toString WITH A BASE OF 16 TO RETURN ITS HEX PAIR
-    let convertedBlue = b.toString(16);                                 // TAKES THE VALUE OF b AND PARSES toString WITH A BASE OF 16 TO RETURN ITS HEX PAIR
+    let convertedRed = r.toString(16),                                  // TAKES THE VALUE OF r AND PARSES toString WITH A BASE OF 16 TO RETURN ITS HEX PAIR
+        convertedGreen = g.toString(16),                                // TAKES THE VALUE OF b AND PARSES toString WITH A BASE OF 16 TO RETURN ITS HEX PAIR
+        convertedBlue = b.toString(16);                                 // TAKES THE VALUE OF b AND PARSES toString WITH A BASE OF 16 TO RETURN ITS HEX PAIR
     
     if (convertedRed!= 2) {
         convertedRed = convertedRed + convertedRed;
