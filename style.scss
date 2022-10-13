@@ -17,6 +17,7 @@
     border: 0.2em solid #7928CA;
     border-radius: 5%;
     color: #fff;
+    @include cross-browser-support-box-shadow;
     label, input {
         padding: 0.5em 0;
     }

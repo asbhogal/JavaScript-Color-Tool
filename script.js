@@ -61,24 +61,15 @@ const convertRGBToHex = (r,g,b) => {
         convertedGreen = g.toString(16),                                // TAKES THE VALUE OF b AND PARSES toString WITH A BASE OF 16 TO RETURN ITS HEX PAIR
         convertedBlue = b.toString(16);                                 // TAKES THE VALUE OF b AND PARSES toString WITH A BASE OF 16 TO RETURN ITS HEX PAIR
     
-    if (convertedRed!= 2) {
-        convertedRed = convertedRed + convertedRed;
+
+    if (convertedRed != 2 && convertedBlue!=2 && convertedGreen != 2){
+        convertedRed += convertedRed;
     }
 
-    if (convertedGreen!= 2) {
-        convertedGreen = convertedGreen + convertedGreen;
-    }
-
-    if (convertedBlue!= 2) {
-        convertedBlue = convertedBlue + convertedBlue;
-    }
-
-    console.log(convertedRed, convertedGreen, convertedBlue);
-    
     return "#" + convertedRed + convertedGreen + convertedBlue;
 }
 
-console.log(convertRGBToHex(0,0,0));
+console.log(convertRGBToHex(0,0,255));
 
 /* FUNCTION CALLS & CONSOLE OUTPUT TESTS*/
 

@@ -37,6 +37,9 @@ body {
   border: 0.2em solid #7928CA;
   border-radius: 5%;
   color: #fff;
+  -webkit-box-shadow: 0px 0px 15px 5px rgb(121, 40, 202);
+  -moz-box-shadow: 0px 0px 15px 5px rgb(121, 40, 202);
+  box-shadow: 0px 0px 15px 5px rgb(121, 40, 202);
 }
 .container label, .container input {
   padding: 0.5em 0;
