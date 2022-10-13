@@ -1,7 +1,9 @@
 /* ASSIGN CONST VARIABLES FROM DOM ELEMENTS*/
 
 const   hexInput = document.getElementById("hex-input"),                  // GET VALUES FROM INPUT VIA DOM ELEMENT AND ASSIGN THIS TO hexInput
-        inputColor = document.getElementById("selected-color");           // GET VALUES FOR THE SELECTED COLOR VIA DOM ELEMENT AND ASSIGN THIS TO inputColor
+        inputColor = document.getElementById("selected-color"),           // GET VALUES FOR THE SELECTED COLOR VIA DOM ELEMENT AND ASSIGN THIS TO inputColor
+        sliderBar = document.getElementById("slider"),
+        sliderText = document.getElementById("slider-text");
 
 /* USER INPUT CHECK */
 
@@ -67,6 +69,14 @@ const convertRGBToHex = (r,g,b) => {
 }
 
 console.log(convertRGBToHex(0,255,255));
+
+/* DISPLAY PERCENTAGE IN TEXT FROM SLIDER DRAG */
+
+sliderBar.addEventListener('input', () => {
+    sliderText.innerHTML = sliderBar.value + " &#37;";
+})
+
+
 
 /* FUNCTION CALLS & CONSOLE OUTPUT TESTS*/
 
