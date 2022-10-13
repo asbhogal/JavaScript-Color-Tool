@@ -57,16 +57,13 @@ const convertHexToRGB = (hex) => {
 /* CONVERT RGB BACK TO HEX FUNCTION */
 
 const convertRGBToHex = (r,g,b) => {
-    let convertedRed = r.toString(16),                                  // TAKES THE VALUE OF r AND PARSES toString WITH A BASE OF 16 TO RETURN ITS HEX PAIR
-        convertedGreen = g.toString(16),                                // TAKES THE VALUE OF b AND PARSES toString WITH A BASE OF 16 TO RETURN ITS HEX PAIR
-        convertedBlue = b.toString(16);                                 // TAKES THE VALUE OF b AND PARSES toString WITH A BASE OF 16 TO RETURN ITS HEX PAIR
+    let convertedRed = ("0" + r.toString(16)).slice(-2),                    // TAKES THE VALUE OF r AND PARSES toString WITH A BASE OF 16. "0" IS THEN APPENDED TO THE START. SLICE THEN TAKES THE LAST TWO VALUES (IRRESPECTIVE OF IT BEING 2 OR 3 CHARACTERS LONG - STANDARDISATION)
+        convertedGreen = ("0" + g.toString(16)).slice(-2),                  // TAKES THE VALUE OF g AND PARSES toString WITH A BASE OF 16. "0" IS THEN APPENDED TO THE START. SLICE THEN TAKES THE LAST TWO VALUES (IRRESPECTIVE OF IT BEING 2 OR 3 CHARACTERS LONG - STANDARDISATION)
+        convertedBlue = ("0" + b.toString(16)).slice(-2);                   // TAKES THE VALUE OF b AND PARSES toString WITH A BASE OF 16. "0" IS THEN APPENDED TO THE START. SLICE THEN TAKES THE LAST TWO VALUES (IRRESPECTIVE OF IT BEING 2 OR 3 CHARACTERS LONG - STANDARDISATION)
     
+    const convertedHex = "#" + convertedRed + convertedGreen + convertedBlue;
 
-    if (convertedRed != 2 && convertedBlue!=2 && convertedGreen != 2){
-        convertedRed += convertedRed;
-    }
-
-    return "#" + convertedRed + convertedGreen + convertedBlue;
+    return convertedHex;
 }
 
 console.log(convertRGBToHex(0,0,255));
