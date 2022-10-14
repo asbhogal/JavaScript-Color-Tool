@@ -47,7 +47,7 @@ const convertHexToRGB = (hex) => {
                     + strippedHex[2] + strippedHex[2];                  // TAKE THE THIRD VALUE IN THE STRING AND CONCATENATE IT WITH THE SAME VALUE
     }
 
-    console.log(strippedHex);                                           // SHOULD RETURN 112233 (CANNOT BE PLACED ON BELOW SECTION AS VARIABLE IS LOCAL SCOPE)
+    // console.log(strippedHex);                                           // SHOULD RETURN 112233 (CANNOT BE PLACED ON BELOW SECTION AS VARIABLE IS LOCAL SCOPE)
 
     const   r = parseInt(strippedHex.slice(0, 2), 16),                    // EXTRACT THE FIRST TWO VALUES OF THE STRING, MULTIPLY THIS BY 16 USING parseInt, THEN ASSIGN THIS VALUE TO r
             g = parseInt(strippedHex.slice(2, 4), 16),                    // EXTRACT THE NEXT TWO VALUES OF THE STRING, MULTIPLY THIS BY 16 USING parseInt, THEN ASSIGN THIS VALUE TO g
@@ -68,7 +68,7 @@ const convertRGBToHex = (r,g,b) => {
     return convertedHex;
 }
 
-/*console.log(convertRGBToHex(0,255,255));*/
+//console.log(convertRGBToHex(0,255,255));
 
 /* DISPLAY PERCENTAGE IN TEXT FROM SLIDER DRAG */
 
@@ -80,19 +80,30 @@ sliderBar.addEventListener('input', () => {
 
 const alterColor = (hex, percentage) => {                               // ACCEPT THE FOLLOWING PARAMETERS (NOT DECLARED) WHICH WILL BE MANIPULATED WITHIN THE FUNCTION
     const {r,g,b} = convertHexToRGB(hex);                               // PARSE THE FUNCTION convertHexToRGB() AND ASSIGN THE VALUES (SEE LINE 56 - THE FUNCTION RETURNS AN OBJECT WITH AN 'r', 'g' and 'b' VALUE) TO CONST VARIABLES r, g, b BY DESTRUCTURING THE VALUES THAT IS RETURNED FROM THE FUNCTION INLINE (ie. INSTEAD OF DECLARING obj.r, obj.g, obj.b INDIVIDUALLY)
+    console.log(`converted Hex to RGB` + r,g,b);                        // CONSOLE LOG THE CORRESPONDING OBJECT VARIABLES DECLARED ABOVE (LOCAL)
 
+    const calculateAmount = Math.floor((percentage / 100) * 255);                // TAKE THE VALUE PASSED TO percentage VIA THE ARGUMENT ON LINE 88 AND DIVIDE THIS BY 100, THEN MULTIPLE BY THE BASE 255. Math.floor() ROUNDS THIS DOWN TO ENSURE IT IS AN INTEGER. THIS AMOUNT IS THEN APPLIED TO THE hex VALUES RETURNED FROM THE ABOVE.
+
+    const   newR = r + calculateAmount,
+            newG = g + calculateAmount,
+            newB = b + calculateAmount;
+
+    console.log(newR, newG, newB);
+    return convertRGBToHex(newR, newG, newB);                           // LEVERAGES THE convertRGBToHex FUNCTION TO THEN CONVERT THESE NEW CALCULATED VALUES TO A HEX 
 }
+
+console.log(alterColor('111', 10));                                     // FUNCTION ABOVE MUST BE CALLED AND PASSED RESPECTIVE ARGUMENTS IF console.log IS TO BE PARSED. THIS WILL RETURN undefined OTHERWISE.
 
 /* FUNCTION CALLS & CONSOLE OUTPUT TESTS*/
 
-/*console.log(isValidHex("#000000"));                                     // SHOULD RETURN true
+/*console.log(isValidHex("#000000"));                                   // SHOULD RETURN true
 console.log(isValidHex("#0000000"));                                    // SHOULD RETURN false
 console.log(isValidHex("#ffffff"));                                     // SHOULD RETURN true
 console.log(isValidHex("#fff"));                                        // SHOULD RETURN true
 console.log(isValidHex("#azp"));                                        // SHOULD RETURN false
 console.log(isValidHex("#323"));                                        // SHOULD RETURN true
 console.log(convertHexToRGB("123"));                                    // SHOULD RETURN {r: 17, g: 34, b: 51}
-console.log(convertHexToRGB("ffe"));                                 // SHOULD RETURN {r: 0, g: 0, b: 0}*/
+console.log(convertHexToRGB("ffe"));                                    // SHOULD RETURN {r: 0, g: 0, b: 0}*/
 
 /* NOTES */
 
@@ -121,3 +132,11 @@ console.log(convertHexToRGB("ffe"));                                 // SHOULD R
 // FOR A FUNCTION TO RUN, IT MUST BE CALLED BY, IN THIS CASE, PASSING IT A VALUE (e.g. convertHexToRGB("123"))
 
 // CONVERTING hex VALUES TO rgb WILL ALLOW ALTERATIONS TO THEN BE MADE TO THEM (e.g. USER CHANGING LIGHT/DARK)
+
+/* alterColor PERFORMS FIVE ACTIONS;
+    1.  ACCEPTS hex AND percentage PARAMETERS PASSED TO IT VIA ARGUMENTS IN A FUNCTION CALL
+    2.  CONVERTS THE HEX VALUES TO RGB USING THE FUNCTION convertHexToRGB(hex)
+    3.  ASSIGNS THESE VALUES TO THE INDIVIDUAL OBJECT VARIABLES, e.g. for '111' --> 17 17 17    
+    4.  INCREASE EACH r g AND b VALUE BY AN APPROPRIATE AMOUNT DEP. ON THE SLIDER POSITION (USING A % OF 255 - THE BASE VALUE), ie. 17 17 17 --> 42 42 42
+    5.  TAKE THE NEW r g AND b VALUES AND CONVERT THESE TO A HEX VALUE e.g. 42 42 42 --> #2a2a2a
+    6.  RETURN THE HEX VALUE, WHICH WILL BE OUTPUTTED IN THE RESPECTIVE DIV */
