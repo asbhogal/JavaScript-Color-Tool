@@ -15,7 +15,7 @@ hexInput.addEventListener('keyup', () => {                              // DETEC
 
     const strippedHex = hex.replace('#', '');                           // SEE LINE 27
 
-    inputColor.style.backgroundColor = "#" + strippedHex;               // TAKES THE VALUE OF strippedHex, APPENDS # TO THE BEGINNING OF IT (ie. STANDARDISING THE VALUE ENTERED) AND ASSIGNS THIS VALUE TO THE BACKGROUND-COLOR PROPERTY
+    inputColor.style.backgroundColor = "#" + strippedHex;               // TAKES THE VALUE OF strippedHex, APPENDS # TO THE BEGINNING OF IT (ie. STANDARDISING THE VALUE ENTERED) AND ASSIGNS THIS VALUE TO THE BACKGROUND-COLOR PROPERTY OF THE INPUT COLOR DIV
 
 });
 
@@ -37,7 +37,7 @@ const isValidHex = (hex) => {                                           // DECLA
 
 const convertHexToRGB = (hex) => {
 
-    if ((!isValidHex(hex))) return null;
+    if ((!isValidHex(hex))) return null;                                // THE isValidHex FUNCTION SHOULD AGAIN BE EXECUTED BEFORE THE FOLLOWING CAN BE PARSED TO THE VALUE
 
     let strippedHex = hex.replace('#', '');                             // THE hex VALUE PASSED IS CONVERTED AND PASSED TO strippedHex, WHICH THEN BECOMES THE VARIABLE USED (NOT THE RAW DATA INPUTTED ie. hex ITSELF)
 
@@ -68,7 +68,7 @@ const convertRGBToHex = (r,g,b) => {
     return convertedHex;
 }
 
-console.log(convertRGBToHex(0,255,255));
+/*console.log(convertRGBToHex(0,255,255));*/
 
 /* DISPLAY PERCENTAGE IN TEXT FROM SLIDER DRAG */
 
@@ -76,7 +76,12 @@ sliderBar.addEventListener('input', () => {
     sliderText.innerHTML = `${sliderBar.value} &#37;`;
 })
 
+/* ALTER COLOR BY PERCENTAGE */
 
+const alterColor = (hex, percentage) => {                               // ACCEPT THE FOLLOWING PARAMETERS (NOT DECLARED) WHICH WILL BE MANIPULATED WITHIN THE FUNCTION
+    const {r,g,b} = convertHexToRGB(hex);                               // PARSE THE FUNCTION convertHexToRGB() AND ASSIGN THE VALUES (SEE LINE 56 - THE FUNCTION RETURNS AN OBJECT WITH AN 'r', 'g' and 'b' VALUE) TO CONST VARIABLES r, g, b BY DESTRUCTURING THE VALUES THAT IS RETURNED FROM THE FUNCTION INLINE (ie. INSTEAD OF DECLARING obj.r, obj.g, obj.b INDIVIDUALLY)
+
+}
 
 /* FUNCTION CALLS & CONSOLE OUTPUT TESTS*/
 
