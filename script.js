@@ -84,15 +84,26 @@ const alterColor = (hex, percentage) => {                                   // A
 
     const calculateAmount = Math.floor((percentage / 100) * 255);           // TAKE THE VALUE PASSED TO percentage VIA THE ARGUMENT ON LINE 88 AND DIVIDE THIS BY 100, THEN MULTIPLE BY THE BASE 255. Math.floor() ROUNDS THIS DOWN TO ENSURE IT IS AN INTEGER. THIS AMOUNT IS THEN APPLIED TO THE hex VALUES RETURNED FROM THE ABOVE.
 
-    const   newR = r + calculateAmount,
-            newG = g + calculateAmount,
-            newB = b + calculateAmount;
+    const   newR = controlValuesWithin0To255(r, calculateAmount),           // CALLS THE FUNCTION AND PASSES THE ARGUMENTS TO IT
+            newG = controlValuesWithin0To255(g, calculateAmount),
+            newB = controlValuesWithin0To255(b, calculateAmount);
 
     console.log(newR, newG, newB);
     return convertRGBToHex(newR, newG, newB);                               // LEVERAGES THE convertRGBToHex FUNCTION TO THEN CONVERT THESE NEW CALCULATED VALUES TO A HEX 
 }
 
-console.log(alterColor('000', 10));                                         // FUNCTION ABOVE MUST BE CALLED AND PASSED RESPECTIVE ARGUMENTS IF console.log IS TO BE PARSED. THIS WILL RETURN undefined OTHERWISE.
+/* KEEP OUTPUT VALUES WITHIN RANGE OF 0 TO 255 */
+
+const controlValuesWithin0To255 = (hex, amount) => {
+    const newHex = hex + amount;
+    if (newHex > 255) return 255;
+    if (newHex < 0) return 0;
+    return newHex;
+}
+
+
+
+console.log(alterColor('fff', 10));                                         // FUNCTION ABOVE MUST BE CALLED AND PASSED RESPECTIVE ARGUMENTS IF console.log IS TO BE PARSED. THIS WILL RETURN undefined OTHERWISE.
 
 /*  WHILE THE ABOVE SHOULD RETURN #252525 (AFTER A 10% PARSE), IT RETURNS #191919. THIS IS BECAUSE
     WHEN BROKEN DOWN INTO PAIRS, 1 IN THE POSITION OF hex (ie. 19 19 19) IS 16, AND ADDING 9 ONTO IT
