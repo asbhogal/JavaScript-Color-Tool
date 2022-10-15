@@ -101,4 +101,6 @@ const controlValuesWithin0To255 = (hex, amount) => {
     return newHex;
 }
 
+/* TEST WITH RAR INPUT */
+
 console.log(alterColor('fff', -10));                                         // FUNCTION ABOVE MUST BE CALLED AND PASSED RESPECTIVE ARGUMENTS IF console.log IS TO BE PARSED. THIS WILL RETURN undefined OTHERWISE.
